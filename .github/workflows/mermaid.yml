@@ -1,0 +1,23 @@
+name: Mermaid validation
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Regenerate GitHub Mermaid gallery
+        run: |
+          python3 scripts/rendering/build-mermaid-gallery.py
+          git diff --exit-code diagrams/GALLERY.md
+      - name: Render Mermaid SVG artifacts
+        run: bash scripts/rendering/render-mermaid.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mermaid-svg
+          path: diagrams/rendered/svg

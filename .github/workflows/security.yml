@@ -1,0 +1,11 @@
+name: Redaction checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/security/scan-sensitive-data.sh

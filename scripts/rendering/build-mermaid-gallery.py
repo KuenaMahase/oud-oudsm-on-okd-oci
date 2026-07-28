@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Generate a GitHub-renderable Mermaid gallery from authoritative .mmd files."""
+from pathlib import Path
+
+root = Path(__file__).resolve().parents[2]
+src_dir = root / "diagrams" / "mermaid"
+out = root / "diagrams" / "GALLERY.md"
+
+titles = {
+    "01-final-platform-context": "1. Final platform context",
+    "02-final-oci-network-topology": "2. OCI network topology",
+    "03-final-okd-cluster-topology": "3. OKD/OpenShift cluster topology",
+    "04-final-load-balancer-and-ingress-flow": "4. Load-balancer and ingress flows",
+    "05-final-nfs-csi-storage-flow": "5. NFS CSI storage flow",
+    "06-final-oud-statefulset-storage": "6. OUD StatefulSet and storage",
+    "07-final-oud-replication-topology": "7. OUD replication topology",
+    "08-final-oud-proxy-routing": "8. OUD Proxy routing",
+    "09-final-oudsm-access-flow": "9. OUDSM access flow",
+    "10-final-deployment-sequence": "10. Successful deployment sequence",
+    "11-final-nfs-failure-recovery": "11. NFS failure recovery",
+    "12-final-security-trust-boundaries": "12. Security trust boundaries",
+}
+
+parts = [
+    "# Mermaid architecture gallery\n",
+    "This page is generated from `diagrams/mermaid/*.mmd`. Edit the `.mmd` source and run `python3 scripts/rendering/build-mermaid-gallery.py`; do not edit generated diagram blocks by hand.\n",
+    "> Solid paths are verified or strongly observed. Dashed or explicitly labelled `VERIFY` paths remain unresolved.\n",
+]
+for source in sorted(src_dir.glob("*.mmd")):
+    stem = source.stem
+    parts.append(f"## {titles.get(stem, stem)}\n")
+    parts.append(f"Source: [`mermaid/{source.name}`](mermaid/{source.name})\n")
+    parts.append("```mermaid\n" + source.read_text(encoding="utf-8").rstrip() + "\n```\n")
+
+out.write_text("\n".join(parts), encoding="utf-8")
+print(out)

@@ -1,0 +1,33 @@
+flowchart LR
+    A[Platform administrator] -->|oc / browser| OCI[OCI entry points]
+    L[LDAP and LDAPS clients] --> OCI
+
+    subgraph VCN[OCI VCN - sanitized]
+      OCI --> OKD[OKD / OpenShift cluster]
+      BV[OCI Block Volume] --> NFS[Oracle Linux NFS server]
+      NFS --> CSI[NFS CSI driver]
+    end
+
+    subgraph OUDNS[Namespace: oudns]
+      PROXY[OUD Proxy - 2 observed pods]
+      DS0[OUD DS 0]
+      DS1[OUD DS 1]
+      DS2[OUD DS 2]
+      PROXY --> DS0
+      PROXY --> DS1
+      PROXY --> DS2
+      DS0 <-. OUD replication .-> DS1
+      DS1 <-. OUD replication .-> DS2
+    end
+
+    subgraph OUDSMNS[Namespace: oudsmns]
+      OUDSM[OUDSM / WebLogic domain]
+    end
+
+    OKD --> PROXY
+    OKD --> OUDSM
+    OUDSM -->|administration connector| DS0
+    CSI -->|dynamic PVs / PVCs| DS0
+    CSI -->|dynamic PVs / PVCs| DS1
+    CSI -->|dynamic PVs / PVCs| DS2
+    CSI -->|dedicated PVC| OUDSM

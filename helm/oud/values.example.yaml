@@ -1,0 +1,45 @@
+# RECOVERED CONFIGURATION — chart-schema verification required.
+replicaCount: 3
+
+image:
+  repository: container-registry.oracle.com/middleware/oud_cpu
+  tag: "14.1.2.1-jdk17-ol9-250718"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets:
+  - name: oracle-registry-secret
+
+oud:
+  instanceName: oud1
+  instanceType: Directory
+  adminConnectorPort: 1444
+  ldapPort: 1389
+  ldapsPort: 1636
+  replicationPort: 1898
+  baseDN: o=maserutel
+  rootUserDN: cn=Directory Manager
+  # Supply credentials through a Kubernetes Secret supported by the chart.
+  sampleData: "200"
+
+persistence:
+  enabled: true
+  type: pvc
+  size: 20Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassCreate: false
+  storageClass: nfs-rwx
+  networkstorage: {}
+
+resources:
+  requests:
+    cpu: "1"
+    memory: 4Gi
+  limits:
+    cpu: "2"
+    memory: 8Gi
+
+securityContext:
+  runAsUser: 1000
+  runAsGroup: 0
+  fsGroup: 1000

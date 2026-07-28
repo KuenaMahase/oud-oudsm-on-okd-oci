@@ -1,0 +1,18 @@
+flowchart LR
+    ADMIN[oc client] -->|TCP 6443| APILB[OCI API LB]
+    APILB --> CP[Control-plane nodes]
+    CP --> API[kube-apiserver]
+
+    BROWSER[Web browser] -->|TCP 443| APPSLB[OCI applications LB]
+    APPSLB --> ROUTERS[OpenShift router pods on workers]
+    ROUTERS --> ROUTE[OUDSM Route]
+    ROUTE --> SMSVC[OUDSM ClusterIP Service]
+    SMSVC --> SMPOD[OUDSM pod]
+
+    LDAP[LDAP client] -->|TCP 389| PUBLB[OCI public LB listener]
+    PUBLB -->|NodePort 30089| WORKERS[Worker nodes]
+    WORKERS --> PROXYSVC[oud-proxy-ldap-public Service]
+    PROXYSVC --> PROXY[OUD Proxy pods]
+
+    LDAPS[LDAPS path]:::verify
+    classDef verify stroke-dasharray: 5 5,stroke:#b45309,color:#92400e

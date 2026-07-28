@@ -1,0 +1,32 @@
+# Secrets and credentials
+*.key
+*.pem
+*.jks
+*.p12
+*.pfx
+*.kubeconfig
+kubeconfig*
+*pull-secret*
+*boot.properties
+*.ldif
+*.ldif.gz
+*.tfstate
+*.tfstate.*
+.terraform/
+.env
+.env.*
+
+# Sensitive historical evidence
+private-evidence/
+raw-evidence/
+credentials/
+
+# Tools
+node_modules/
+.venv/
+__pycache__/
+.DS_Store
+*.log
+
+# Render scratch
+.mermaid-cache/

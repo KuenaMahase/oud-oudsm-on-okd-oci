@@ -1,0 +1,45 @@
+flowchart TB
+    subgraph OKD[OKD / OpenShift cluster]
+      subgraph CP[3 control-plane nodes - observed]
+        API[kube-apiserver]
+        ETCD[etcd]
+        SCHED[scheduler and controllers]
+      end
+      subgraph WK[3 worker nodes - observed]
+        R1[router pod]
+        R2[router pod]
+        R3[router pod]
+        OUDW[OUD and OUD Proxy workloads]
+        OUDSMW[OUDSM workload]
+      end
+      subgraph NS1[oudns]
+        P0[oud-proxy-0]
+        P1[oud-proxy-1]
+        D0[OUD DS 0]
+        D1[OUD DS 1]
+        D2[OUD DS 2]
+      end
+      subgraph NS2[oudsmns]
+        SM[OUDSM domain]
+      end
+      subgraph CSINS[openshift-csi-driver-nfs-namespace]
+        CCTRL[NFS CSI controllers]
+        CNODE[NFS CSI node DaemonSet]
+      end
+    end
+    R1 --> SM
+    R2 --> SM
+    R3 --> SM
+    OUDW --> P0
+    OUDW --> P1
+    P0 --> D0
+    P0 --> D1
+    P0 --> D2
+    P1 --> D0
+    P1 --> D1
+    P1 --> D2
+    OUDSMW --> SM
+    CNODE --> D0
+    CNODE --> D1
+    CNODE --> D2
+    CNODE --> SM

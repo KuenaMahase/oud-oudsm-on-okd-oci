@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant RM as OCI Resource Manager
+    participant AI as Assisted Installer
+    participant OKD as OKD/OpenShift
+    participant NFS as NFS VM
+    participant CSI as NFS CSI
+    participant OUD as OUD Helm release
+    participant Proxy as OUD Proxy
+    participant OUDSM as OUDSM Helm release
+
+    RM->>RM: Terraform init, plan/apply, OCI resources
+    AI->>OKD: Install 3 control-plane and 3 worker nodes
+    OKD->>OKD: Validate nodes, API, console, ingress
+    NFS->>NFS: Attach, format, mount 1 TB block volume
+    NFS->>NFS: Export /scratch/shared/oud_user_projects
+    OKD->>CSI: Install controller and node components
+    CSI->>NFS: Validate RWX with test PVC and pod
+    OKD->>OUD: Create namespace, secrets, SCC access, Helm install
+    OUD->>OUD: Validate 3 DS pods and replication
+    OKD->>Proxy: Deploy 2 proxy pods and configure dsconfig routes
+    OKD->>OUDSM: Install with replicaCount=1
+    OUDSM->>OUDSM: Wait for WebLogic domain readiness
+    OKD->>OUDSM: Scale to 2 after validation
+    OKD->>OKD: Validate external API, UI, LDAP and persistence

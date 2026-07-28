@@ -1,0 +1,15 @@
+# Sanitized form of the final successful StorageClass.
+# Replace the NFS DNS name with the reachable server used by the cluster.
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-rwx
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: nfs01.lab.example
+  share: /scratch/shared/oud_user_projects
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
+mountOptions:
+  - nfsvers=4.1

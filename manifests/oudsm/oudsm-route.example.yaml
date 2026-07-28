@@ -1,0 +1,19 @@
+# RECONSTRUCTED / VERIFY: recover the final Route YAML before treating this as historical fact.
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: oudsm
+  namespace: oudsmns
+spec:
+  host: oudsm.apps.oud-okd.lab.example
+  to:
+    kind: Service
+    name: oudsm
+    weight: 100
+  port:
+    targetPort: https
+  tls:
+    termination: reencrypt
+    insecureEdgeTerminationPolicy: Redirect
+    destinationCACertificate: |-
+      REPLACE_WITH_BACKEND_CA_CERTIFICATE

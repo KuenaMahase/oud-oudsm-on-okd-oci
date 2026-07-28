@@ -1,0 +1,13 @@
+# VERIFY the capacity against the historical final PVC before use.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: oudsm-pvc
+  namespace: oudsmns
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 20Gi
+  storageClassName: nfs-rwx

@@ -1,0 +1,19 @@
+flowchart TB
+    STS[OUD StatefulSet\n3 replicas observed/recovered]
+    H[Headless service / stable DNS]
+    STS --> P0[Pod DS 0]
+    STS --> P1[Pod DS 1]
+    STS --> P2[Pod DS 2]
+    H --> P0
+    H --> P1
+    H --> P2
+    P0 --> C0[PVC 0]
+    P1 --> C1[PVC 1]
+    P2 --> C2[PVC 2]
+    C0 --> V0[(NFS directory 0)]
+    C1 --> V1[(NFS directory 1)]
+    C2 --> V2[(NFS directory 2)]
+    P0 <-. replication .-> P1
+    P1 <-. replication .-> P2
+    NOTE[Shared NFS server does not mean shared OUD database directory]
+    NOTE -.-> C1
