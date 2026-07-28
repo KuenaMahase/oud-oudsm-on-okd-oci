@@ -26,6 +26,6 @@ Apply pull secrets to init containers, Helm hooks, backup jobs, log sidecars, an
 
 ## Official references
 
-- Oracle OUD system requirements and registry guidance: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/
-- Oracle OUDSM image guidance: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/osmku/
-- Kubernetes Secrets: https://kubernetes.io/docs/concepts/configuration/secret/
+- Oracle OUD system requirements and registry guidance: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/>
+- Oracle OUDSM image guidance: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/osmku/>
+- Kubernetes Secrets: <https://kubernetes.io/docs/concepts/configuration/secret/>

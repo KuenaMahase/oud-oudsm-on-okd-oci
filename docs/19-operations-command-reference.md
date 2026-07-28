@@ -460,15 +460,15 @@ Review manually for identifiers the scanner cannot infer.
 
 ## Official references
 
-- Oracle OUD replication verification: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/verifying-oud-replication.html
-- Oracle OUD command-line reference: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudag/oracle-unified-directory-command-line-interface-reference.html
-- Oracle OUD Kubernetes verification: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/verifying-oud-deployment.html
-- OpenShift IngressController API: https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operator_apis/ingresscontroller-operator-openshift-io-v1
-- OpenShift Routes: https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes
-- OpenShift SCC documentation: https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html-multi/authentication_and_authorization/index
-- Kubernetes command reference: https://kubernetes.io/docs/reference/kubectl/generated/
-- Kubernetes rollout status: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/
-- Kubernetes `auth can-i`: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_auth/kubectl_auth_can-i/
-- OCI Resource Manager job logs: https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/get-job-logs.htm
-- OCI Resource Manager log download: https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/get-job-logs-content.htm
-- OCI load-balancer backend health: https://docs.oracle.com/en-us/iaas/Content/Balance/Tasks/get_backend-server-health.htm
+- Oracle OUD replication verification: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/verifying-oud-replication.html>
+- Oracle OUD command-line reference: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudag/oracle-unified-directory-command-line-interface-reference.html>
+- Oracle OUD Kubernetes verification: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/verifying-oud-deployment.html>
+- OpenShift IngressController API: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operator_apis/ingresscontroller-operator-openshift-io-v1>
+- OpenShift Routes: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes>
+- OpenShift SCC documentation: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html-multi/authentication_and_authorization/index>
+- Kubernetes command reference: <https://kubernetes.io/docs/reference/kubectl/generated/>
+- Kubernetes rollout status: <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/>
+- Kubernetes `auth can-i`: <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_auth/kubectl_auth_can-i/>
+- OCI Resource Manager job logs: <https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/get-job-logs.htm>
+- OCI Resource Manager log download: <https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/get-job-logs-content.htm>
+- OCI load-balancer backend health: <https://docs.oracle.com/en-us/iaas/Content/Balance/Tasks/get_backend-server-health.htm>

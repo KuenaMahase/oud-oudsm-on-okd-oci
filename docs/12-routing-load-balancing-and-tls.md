@@ -3,7 +3,7 @@
 ## Load-balancer responsibilities
 
 | Entry point | Observed listener | Backends | Purpose |
-|---|---:|---|---|
+| --- | ---: | --- | --- |
 | API | TCP 6443 | Control-plane nodes | `oc` and Kubernetes API |
 | Applications | TCP 443 | Worker nodes running router pods | OpenShift console and application Routes, including OUDSM |
 | LDAP | TCP 389 | Worker nodes | NodePort 30089 to OUD Proxy |
@@ -36,6 +36,6 @@ OUDSM notes indicate a re-encrypt Route, preserving TLS between the router and b
 
 ## Official references
 
-- OCI load-balancer health management: https://docs.oracle.com/iaas/Content/Balance/Tasks/load_balancer_health_management.htm
-- OpenShift secured Routes: https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/ingress_and_load_balancing/routes
-- Kubernetes non-HTTP exposure guidance: https://kubernetes.io/docs/concepts/services-networking/ingress/
+- OCI load-balancer health management: <https://docs.oracle.com/iaas/Content/Balance/Tasks/load_balancer_health_management.htm>
+- OpenShift secured Routes: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/ingress_and_load_balancing/routes>
+- Kubernetes non-HTTP exposure guidance: <https://kubernetes.io/docs/concepts/services-networking/ingress/>

@@ -41,5 +41,5 @@ oc run dns-check --rm -it --restart=Never   --image=registry.access.redhat.com/u
 
 ## Official references
 
-- Assisted Installer: https://docs.redhat.com/en/documentation/assisted_installer_for_openshift_container_platform/2026/html/installing_openshift_container_platform_with_the_assisted_installer/
-- OpenShift installation overview: https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/installation_overview/ocp-installation-overview
+- Assisted Installer: <https://docs.redhat.com/en/documentation/assisted_installer_for_openshift_container_platform/2026/html/installing_openshift_container_platform_with_the_assisted_installer/>
+- OpenShift installation overview: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/installation_overview/ocp-installation-overview>

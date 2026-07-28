@@ -60,6 +60,6 @@ done
 
 ## Official references
 
-- Oracle OUD administration documentation: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudag/
-- Oracle OUD Kubernetes documentation: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/
-- Kubernetes Services: https://kubernetes.io/docs/concepts/services-networking/service/
+- Oracle OUD administration documentation: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudag/>
+- Oracle OUD Kubernetes documentation: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/>
+- Kubernetes Services: <https://kubernetes.io/docs/concepts/services-networking/service/>

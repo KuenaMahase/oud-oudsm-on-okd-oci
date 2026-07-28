@@ -54,5 +54,5 @@ Review and sanitize every file before moving it into `evidence/sanitized/`.
 
 ## Official references
 
-- `kubectl rollout status`: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/
-- Kubernetes self-healing: https://kubernetes.io/docs/concepts/architecture/self-healing/
+- `kubectl rollout status`: <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/>
+- Kubernetes self-healing: <https://kubernetes.io/docs/concepts/architecture/self-healing/>

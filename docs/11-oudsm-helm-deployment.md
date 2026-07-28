@@ -59,6 +59,6 @@ The exact historical PVC capacity and Route target are retained as `VERIFY` beca
 
 ## Official references
 
-- Oracle OUDSM Kubernetes documentation: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/osmku/
-- OUDSM Helm chart parameters: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/osmku/configuration-parameters-oudsm-helm-chart.html
-- OpenShift Routes: https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/ingress_and_load_balancing/routes
+- Oracle OUDSM Kubernetes documentation: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/osmku/>
+- OUDSM Helm chart parameters: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/osmku/configuration-parameters-oudsm-helm-chart.html>
+- OpenShift Routes: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/ingress_and_load_balancing/routes>

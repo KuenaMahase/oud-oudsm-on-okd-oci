@@ -1,3 +1,5 @@
+# Pull request
+
 ## Summary
 
 ## Historical evidence used
@@ -13,7 +15,7 @@
 ## Validation
 
 | Check | Result |
-|---|---|
+| --- | --- |
 | Markdown | |
 | YAML | |
 | ShellCheck | |

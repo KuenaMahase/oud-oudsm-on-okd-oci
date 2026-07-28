@@ -59,8 +59,8 @@ oc exec -n storage-validation nfs-test-pod -- cat /data/hello
 
 ## Official references
 
-- Kubernetes StorageClasses: https://kubernetes.io/docs/concepts/storage/storage-classes/
-- Kubernetes Persistent Volumes: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
-- NFS CSI project: https://github.com/kubernetes-csi/csi-driver-nfs
-- NFS CSI parameters: https://github.com/kubernetes-csi/csi-driver-nfs/blob/master/docs/driver-parameters.md
-- OpenShift SCCs: https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index
+- Kubernetes StorageClasses: <https://kubernetes.io/docs/concepts/storage/storage-classes/>
+- Kubernetes Persistent Volumes: <https://kubernetes.io/docs/concepts/storage/persistent-volumes/>
+- NFS CSI project: <https://github.com/kubernetes-csi/csi-driver-nfs>
+- NFS CSI parameters: <https://github.com/kubernetes-csi/csi-driver-nfs/blob/master/docs/driver-parameters.md>
+- OpenShift SCCs: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index>

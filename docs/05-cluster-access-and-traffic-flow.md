@@ -46,6 +46,6 @@ oc run netcheck --rm -it --restart=Never   --image=registry.access.redhat.com/ub
 
 ## Official references
 
-- OpenShift Routes: https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/ingress_and_load_balancing/routes
-- Kubernetes Services and NodePort: https://kubernetes.io/docs/concepts/services-networking/service/
-- OCI load balancers: https://docs.oracle.com/en-us/iaas/Content/Balance/Tasks/managingloadbalancer.htm
+- OpenShift Routes: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/ingress_and_load_balancing/routes>
+- Kubernetes Services and NodePort: <https://kubernetes.io/docs/concepts/services-networking/service/>
+- OCI load balancers: <https://docs.oracle.com/en-us/iaas/Content/Balance/Tasks/managingloadbalancer.htm>

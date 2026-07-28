@@ -1,7 +1,7 @@
 # Evidence register
 
 | ID | Artifact | What it proves | Sensitivity | Classification | Public action | Confidence |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | E-001 | OCI Resource Manager job log, June 2025 | Terraform initialized and OCI cluster/network resources were managed | Contains OCIDs and tenancy details | VERIFIED | Summarize only; original private | High |
 | E-002 | Original OKD/OCI presentation | Project intent, Assisted Installer flow, early architecture and cluster access narrative | Contains historical cluster naming | OBSERVED | Recreate diagrams | Medium |
 | E-003 | Node CLI screenshots | Three control-plane and three worker nodes Ready | Contains real node names and IPs | OBSERVED | Recreate as Mermaid; original private | High |

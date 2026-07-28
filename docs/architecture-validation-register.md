@@ -1,7 +1,7 @@
 # Architecture validation register
 
 | ID | Diagram | Component or connection | Historical evidence | Official reference | Status | Notes |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | A-001 | OCI topology | 3 control-plane nodes | Node CLI screenshot | Red Hat Assisted Installer | OBSERVED | Names sanitized |
 | A-002 | OCI topology | 3 worker nodes | Node CLI screenshot | Red Hat Assisted Installer | OBSERVED | Names sanitized |
 | A-003 | LB flow | TCP 6443 -> control plane | OCI listener screenshot | OCI LB docs | OBSERVED | Backend membership inferred from name and architecture; verify exported LB config |

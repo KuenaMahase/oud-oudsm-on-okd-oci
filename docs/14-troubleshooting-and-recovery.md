@@ -73,6 +73,6 @@ A proxy can accept a bind yet return no-such-object when no workflow maps the re
 
 ## Official references
 
-- OpenShift troubleshooting and SCC concepts: https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index
-- NFS CSI troubleshooting: https://github.com/kubernetes-csi/csi-driver-nfs
-- OCI health checks: https://docs.oracle.com/iaas/Content/Balance/Tasks/load_balancer_health_management.htm
+- OpenShift troubleshooting and SCC concepts: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index>
+- NFS CSI troubleshooting: <https://github.com/kubernetes-csi/csi-driver-nfs>
+- OCI health checks: <https://docs.oracle.com/iaas/Content/Balance/Tasks/load_balancer_health_management.htm>

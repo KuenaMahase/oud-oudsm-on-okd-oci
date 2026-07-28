@@ -1,7 +1,7 @@
 # Verify register
 
 | ID | Unresolved fact | Why unresolved | Evidence that will close it |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | V-001 | Exact OUD chart commit/tag | Values file does not preserve chart metadata | `helm get metadata`, chart archive, or Git commit used |
 | V-002 | Exact OUD image digest | Tag recovered, digest not retained | `oc get pod -o jsonpath` imageID or registry evidence |
 | V-003 | Final OUDSM PVC capacity | Notes conflict between 5, 10 and 20 GiB | Final PVC YAML or `oc get pvc` output |

@@ -57,6 +57,6 @@ oc exec -n oudns <oud-pod> -- /u01/oracle/oud/bin/dsreplication status   --hostn
 
 ## Official references
 
-- Oracle OUD Kubernetes documentation: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/
-- Oracle `fmw-kubernetes`: https://github.com/oracle/fmw-kubernetes
-- Kubernetes StatefulSets: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+- Oracle OUD Kubernetes documentation: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/>
+- Oracle `fmw-kubernetes`: <https://github.com/oracle/fmw-kubernetes>
+- Kubernetes StatefulSets: <https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/>

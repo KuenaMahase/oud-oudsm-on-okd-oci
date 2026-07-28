@@ -22,5 +22,5 @@ Historical lab deployment used `anyuid` and privileged SCC grants where required
 
 ## Official references
 
-- OpenShift SCCs: https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index
-- Kubernetes Secrets: https://kubernetes.io/docs/concepts/configuration/secret/
+- OpenShift SCCs: <https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index>
+- Kubernetes Secrets: <https://kubernetes.io/docs/concepts/configuration/secret/>

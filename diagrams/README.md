@@ -15,7 +15,7 @@ Open [`GALLERY.md`](GALLERY.md) to view every Mermaid diagram rendered natively 
 ## Diagram inventory
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `01-final-platform-context.mmd` | Recruiter-readable full platform context |
 | `02-final-oci-network-topology.mmd` | OCI nodes, listeners and NFS |
 | `03-final-okd-cluster-topology.mmd` | OpenShift roles, namespaces and workloads |

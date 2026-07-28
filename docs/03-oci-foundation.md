@@ -40,7 +40,7 @@ These commands are operational helpers from official OCI tooling. Their presence
 
 ## Official references
 
-- OCI Resource Manager: https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm
-- Resource Manager job logs: https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/get-job-logs-content.htm
-- OCI load balancers: https://docs.oracle.com/en-us/iaas/Content/Balance/Tasks/managingloadbalancer.htm
-- OCI load-balancer health policies: https://docs.oracle.com/iaas/Content/Balance/Tasks/load_balancer_health_management.htm
+- OCI Resource Manager: <https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm>
+- Resource Manager job logs: <https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/get-job-logs-content.htm>
+- OCI load balancers: <https://docs.oracle.com/en-us/iaas/Content/Balance/Tasks/managingloadbalancer.htm>
+- OCI load-balancer health policies: <https://docs.oracle.com/iaas/Content/Balance/Tasks/load_balancer_health_management.htm>

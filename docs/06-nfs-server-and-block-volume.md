@@ -70,5 +70,5 @@ A later pod-mount failure was traced to `/scratch` not being mounted before the 
 
 ## Official references
 
-- OCI Block Volumes: https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/overview.htm
-- Oracle IAM Kubernetes enterprise deployment storage guidance: https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/ikedg/
+- OCI Block Volumes: <https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/overview.htm>
+- Oracle IAM Kubernetes enterprise deployment storage guidance: <https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/ikedg/>

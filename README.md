@@ -43,7 +43,7 @@ flowchart LR
 ## Evidence status
 
 | Area | Status | Summary |
-|---|---|---|
+| --- | --- | --- |
 | OCI Resource Manager | Verified | Retained job log shows provider initialization and OCI resource refresh/create operations. |
 | Cluster topology | Observed | Screenshots show three control-plane and three worker nodes ready. |
 | NFS CSI | Verified | Test PVC and pod wrote and read `hello-from-nfs`; a dynamic `pvc-*` directory was observed on the server. |

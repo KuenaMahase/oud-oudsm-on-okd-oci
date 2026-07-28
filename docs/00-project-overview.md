@@ -16,14 +16,12 @@ The project demonstrates cloud networking, Kubernetes/OpenShift administration, 
 
 This repository is not a claim that the original environment is still running. It distinguishes historical proof from current reference configuration and labels unresolved facts.
 
-
 ## Official references
 
-- Oracle OUD Kubernetes documentation: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/
-- Oracle OUDSM Kubernetes documentation: https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/osmku/
-- Oracle `fmw-kubernetes`: https://github.com/oracle/fmw-kubernetes
-- Red Hat/OpenShift documentation: https://docs.redhat.com/en/documentation/assisted_installer_for_openshift_container_platform/2026/html/installing_openshift_container_platform_with_the_assisted_installer/
-- Kubernetes documentation: https://kubernetes.io/docs/concepts/storage/storage-classes/
-- Kubernetes NFS CSI driver: https://github.com/kubernetes-csi/csi-driver-nfs
-- OCI documentation: https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm
-
+- Oracle OUD Kubernetes documentation: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/oudku/>
+- Oracle OUDSM Kubernetes documentation: <https://docs.oracle.com/en/middleware/idm/unified-directory/14.1.2/osmku/>
+- Oracle `fmw-kubernetes`: <https://github.com/oracle/fmw-kubernetes>
+- Red Hat/OpenShift documentation: <https://docs.redhat.com/en/documentation/assisted_installer_for_openshift_container_platform/2026/html/installing_openshift_container_platform_with_the_assisted_installer/>
+- Kubernetes documentation: <https://kubernetes.io/docs/concepts/storage/storage-classes/>
+- Kubernetes NFS CSI driver: <https://github.com/kubernetes-csi/csi-driver-nfs>
+- OCI documentation: <https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm>
