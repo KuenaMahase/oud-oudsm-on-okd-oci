@@ -1,4 +1,6 @@
-# RECOVERED CONFIGURATION — chart-schema and final PVC capacity verification required.
+---
+# RECOVERED CONFIGURATION
+# VERIFY the chart schema and final PVC capacity before use.
 replicaCount: 1
 
 image:
@@ -52,7 +54,8 @@ persistence:
 
 oudsm:
   adminUser: weblogic
-  # Use the chart's Secret integration; do not place adminPass in version control.
+  # Use the chart's Secret integration.
+  # Do not place adminPass in version control.
   startupTime: 300
   livenessProbeInitialDelay: 600
   weblogicPluginEnabled: "true"

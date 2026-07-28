@@ -1,4 +1,6 @@
-# RECONSTRUCTED / VERIFY: recover the final Route YAML before treating this as historical fact.
+---
+# RECONSTRUCTED / VERIFY: recover the final Route YAML before
+# treating this example as historical fact.
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:

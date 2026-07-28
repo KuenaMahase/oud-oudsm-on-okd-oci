@@ -1,5 +1,7 @@
+---
 # VERIFY: remembered configuration, not promoted to final successful evidence.
-# Do not apply until the final OCI listener and historical Service YAML are recovered.
+# Do not apply until the final OCI listener and historical
+# Service YAML are recovered.
 apiVersion: v1
 kind: Service
 metadata:
