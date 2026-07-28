@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
+# lib.sh is stored beside each validation script.
+# shellcheck disable=SC1091
 source "$(dirname "$0")/lib.sh"
 
 ns=${OUD_NAMESPACE:-oudns}
 oc get pods -n "$ns" -l app.kubernetes.io/name=oud-proxy -o wide
-oc get svc -n "$ns" oud-proxy-ldap-public -o yaml >/dev/null && pass "LDAP public Service exists" || verify "LDAP Service name differs or is absent"
+if oc get svc -n "$ns" oud-proxy-ldap-public -o yaml >/dev/null; then
+  pass "LDAP public Service exists"
+else
+  verify "LDAP Service name differs or is absent"
+fi
 
 if [[ -z "${PROXY_POD:-}" || -z "${PASSWORD_FILE_IN_POD:-}" ]]; then
   verify "set PROXY_POD and PASSWORD_FILE_IN_POD to inspect dsconfig objects"

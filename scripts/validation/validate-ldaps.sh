@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+# lib.sh is stored beside each validation script.
+# shellcheck disable=SC1091
 source "$(dirname "$0")/lib.sh"
 
 : "${LDAPS_HOST:?Set LDAPS_HOST}"
