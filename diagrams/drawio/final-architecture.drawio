@@ -1,0 +1,23 @@
+<mxfile host="app.diagrams.net" modified="2026-07-28T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="final-architecture" name="Final architecture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="clients" value="Administrators and LDAP clients" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="40" y="320" width="180" height="70" as="geometry"/></mxCell>
+        <mxCell id="lb" value="OCI API / Apps / LDAP Load Balancers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1"><mxGeometry x="290" y="300" width="220" height="110" as="geometry"/></mxCell>
+        <mxCell id="okd" value="OKD / OpenShift Cluster" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="590" y="130" width="520" height="470" as="geometry"/></mxCell>
+        <mxCell id="proxy" value="OUD Proxy (2 pods)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="640" y="250" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="oud" value="OUD DS replicas (3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="880" y="250" width="170" height="70" as="geometry"/></mxCell>
+        <mxCell id="oudsm" value="OUDSM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="755" y="430" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="nfs" value="OCI Block Volume → NFS VM → NFS CSI / nfs-rwx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="590" y="680" width="520" height="80" as="geometry"/></mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="clients" target="lb"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="lb" target="proxy"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="lb" target="oudsm"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="proxy" target="oud"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="nfs" target="oud"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="nfs" target="oudsm"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

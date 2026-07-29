@@ -1,0 +1,17 @@
+---
+# Sanitized from the observed successful LDAP Service.
+apiVersion: v1
+kind: Service
+metadata:
+  name: oud-proxy-ldap-public
+  namespace: oudns
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: oud-proxy
+  ports:
+    - name: ldap
+      protocol: TCP
+      port: 389
+      targetPort: 1389
+      nodePort: 30089

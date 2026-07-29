@@ -1,0 +1,37 @@
+flowchart TB
+    ADMIN[Administrator] --> APILB[OCI API load balancer\nTCP 6443]
+    WEB[Browser] --> APPSLB[OCI applications load balancer\nTCP 443]
+    LDAP[LDAP client] --> LDAPLB[OCI LDAP listener\nTCP 389]
+
+    subgraph VCN[OCI VCN]
+      subgraph CP[Control-plane subnet]
+        CP1[Control plane 1]
+        CP2[Control plane 2]
+        CP3[Control plane 3]
+      end
+      subgraph WORKERS[Worker subnets]
+        W1[Worker 1]
+        W2[Worker 2]
+        W3[Worker 3]
+      end
+      subgraph STORAGE[Storage subnet]
+        NFS[NFS compute instance]
+        BV[(OCI Block Volume)]
+        BV -->|mounted at /scratch| NFS
+      end
+      APILB --> CP1
+      APILB --> CP2
+      APILB --> CP3
+      APPSLB --> W1
+      APPSLB --> W2
+      APPSLB --> W3
+      LDAPLB -->|NodePort 30089 observed| W1
+      LDAPLB -->|NodePort 30089 observed| W2
+      LDAPLB -->|NodePort 30089 observed| W3
+      W1 -->|NFS 4.1 / TCP 2049| NFS
+      W2 -->|NFS 4.1 / TCP 2049| NFS
+      W3 -->|NFS 4.1 / TCP 2049| NFS
+    end
+
+    LDAPS[LDAPS listener / port path]:::verify
+    classDef verify stroke-dasharray: 5 5,stroke:#b45309,color:#92400e

@@ -1,0 +1,10 @@
+flowchart LR
+    D0[OUD DS 0\nLDAP 1389\nAdmin 1444]
+    D1[OUD DS 1\nLDAP 1389\nAdmin 1444]
+    D2[OUD DS 2\nLDAP 1389\nAdmin 1444]
+    D0 <-. replication port recovered as 1898 .-> D1
+    D1 <-. replication .-> D2
+    D2 <-. replication .-> D0
+    V0[(PVC 0)] --> D0
+    V1[(PVC 1)] --> D1
+    V2[(PVC 2)] --> D2

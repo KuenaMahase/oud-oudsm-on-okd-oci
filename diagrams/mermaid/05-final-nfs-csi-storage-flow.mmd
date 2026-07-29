@@ -1,0 +1,20 @@
+flowchart LR
+    BV[(OCI Block Volume\n1 TB observed)] -->|mounted at /scratch| VM[Oracle Linux 9 NFS VM]
+    VM --> EXPORT[NFS export\n/scratch/shared/oud_user_projects]
+    EXPORT -->|NFSv4.1| CSI[NFS CSI driver\nnfs.csi.k8s.io]
+    CSI --> SC[StorageClass nfs-rwx\ncluster-scoped\nRetain / Immediate]
+
+    SC --> P0[PVC for OUD DS 0]
+    SC --> P1[PVC for OUD DS 1]
+    SC --> P2[PVC for OUD DS 2]
+    SC --> PS[PVC for OUDSM]
+
+    P0 --> D0[(pvc-specific NFS subdirectory)]
+    P1 --> D1[(pvc-specific NFS subdirectory)]
+    P2 --> D2[(pvc-specific NFS subdirectory)]
+    PS --> DS[(pvc-specific NFS subdirectory)]
+
+    D0 --> O0[OUD DS 0]
+    D1 --> O1[OUD DS 1]
+    D2 --> O2[OUD DS 2]
+    DS --> SM[OUDSM]

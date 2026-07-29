@@ -1,0 +1,64 @@
+---
+# RECOVERED CONFIGURATION
+# VERIFY the chart schema and final PVC capacity before use.
+replicaCount: 1
+
+image:
+  repository: container-registry.oracle.com/middleware/oudsm_cpu
+  tag: "14.1.2.1-jdk17-ol9-250718"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets:
+  - name: oracle-registry-secret
+
+serviceAccount:
+  create: false
+  name: oudsm-sa
+
+podSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+  fsGroup: 1000
+  fsGroupChangePolicy: OnRootMismatch
+
+service:
+  type: ClusterIP
+  port: 7001
+  sslPort: 7002
+
+ingress:
+  enabled: false
+
+nodeSelector:
+  node-role.kubernetes.io/worker: ""
+
+affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          topologyKey: kubernetes.io/hostname
+          labelSelector:
+            matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                  - oudsm
+
+persistence:
+  enabled: true
+  pvcname: oudsm-pvc
+  accessMode: ReadWriteMany
+  size: 20Gi
+  storageClass: nfs-rwx
+
+oudsm:
+  adminUser: weblogic
+  # Use the chart's Secret integration.
+  # Do not place adminPass in version control.
+  startupTime: 300
+  livenessProbeInitialDelay: 600
+  weblogicPluginEnabled: "true"
+
+elk:
+  IntegrationEnabled: false

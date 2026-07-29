@@ -1,0 +1,30 @@
+flowchart TB
+    subgraph PUBLIC[External client zone]
+      ADMIN[Administrator]
+      LDAP[LDAP clients]
+    end
+    subgraph OCI[OCI VCN boundary]
+      LB[OCI load balancers and listeners]
+      subgraph OKD[OKD/OpenShift trust boundary]
+        ROUTER[Ingress/router]
+        subgraph OUDNS[oudns]
+          PROXY[OUD Proxy]
+          OUD[OUD DS replicas]
+        end
+        subgraph OUDSMNS[oudsmns]
+          OUDSM[OUDSM]
+        end
+        SECRETS[Kubernetes Secrets and service accounts]
+      end
+      subgraph STORAGE[NFS storage boundary]
+        NFS[NFS VM]
+        BV[(Block Volume)]
+      end
+    end
+    ADMIN --> LB --> ROUTER --> OUDSM
+    LDAP --> LB --> PROXY --> OUD
+    SECRETS --> PROXY
+    SECRETS --> OUD
+    SECRETS --> OUDSM
+    BV --> NFS --> OUD
+    NFS --> OUDSM

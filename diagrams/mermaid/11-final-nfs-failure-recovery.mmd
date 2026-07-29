@@ -1,0 +1,14 @@
+flowchart TD
+    A[Pod mount failure / PVC workload not starting] --> B{NFS server reachable?}
+    B -- no --> C[Check OCI security rules, DNS and TCP 2049]
+    B -- yes --> D{Is /scratch mounted?}
+    D -- no --> E[Inspect lsblk, blkid, findmnt and /etc/fstab]
+    E --> F[Correct persistent UUID mount]
+    F --> G[mount -a and verify df -h]
+    D -- yes --> H[Check exportfs -v and /etc/exports]
+    G --> H
+    H --> I[exportfs -rav]
+    I --> J[restart nfs-server]
+    J --> K[Recreate or restart test pod]
+    K --> L[Read/write hello-from-nfs]
+    L --> M[Verify pvc-* directory on NFS server]

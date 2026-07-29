@@ -1,0 +1,25 @@
+---
+# Reference hardening example. Not claimed as part of the historical deployment.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-oud-proxy-to-directory
+  namespace: oudns
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/component: directory-server
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/name: oud-proxy
+      ports:
+        - protocol: TCP
+          port: 1389
+        - protocol: TCP
+          port: 1636
+        - protocol: TCP
+          port: 1444

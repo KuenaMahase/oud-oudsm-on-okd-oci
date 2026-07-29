@@ -1,0 +1,17 @@
+flowchart LR
+    CLIENT[LDAP client]
+    LISTENER[OUD Proxy LDAP listener 1389]
+    NG[Network group]
+    WF[Base-DN workflow]:::verify
+    LB[lb-we\nproportional algorithm]
+    P0[proxy-we-ds0]
+    P1[proxy-we-ds1]
+    P2[proxy-we-ds2]
+    D0[DS endpoint 0:1389]
+    D1[DS endpoint 1:1389]
+    D2[DS endpoint 2:1389]
+    CLIENT --> LISTENER --> NG --> WF --> LB
+    LB --> P0 --> D0
+    LB --> P1 --> D1
+    LB --> P2 --> D2
+    classDef verify stroke-dasharray: 5 5,stroke:#b45309,color:#92400e

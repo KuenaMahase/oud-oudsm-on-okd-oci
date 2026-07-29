@@ -1,0 +1,16 @@
+sequenceDiagram
+    actor User as Administrator
+    participant LB as OCI applications LB
+    participant Router as OpenShift router
+    participant Route as OUDSM Route
+    participant Service as OUDSM Service
+    participant OUDSM as OUDSM/WebLogic
+    participant OUD as OUD admin connector
+
+    User->>LB: HTTPS 443
+    LB->>Router: TCP 443
+    Router->>Route: Match host
+    Route->>Service: Re-encrypted HTTPS (VERIFY exact target)
+    Service->>OUDSM: 7002 expected / 7001 also exposed
+    User->>OUDSM: Authenticate to management UI
+    OUDSM->>OUD: Admin connector 1444 over SSL

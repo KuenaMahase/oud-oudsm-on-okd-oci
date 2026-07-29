@@ -1,0 +1,21 @@
+---
+# VERIFY: remembered configuration, not promoted to final successful evidence.
+# Do not apply until the final OCI listener and historical
+# Service YAML are recovered.
+apiVersion: v1
+kind: Service
+metadata:
+  name: oud-proxy-ldaps-public
+  namespace: oudns
+  annotations:
+    portfolio.maserutel.example/status: VERIFY
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: oud-proxy
+  ports:
+    - name: ldaps
+      protocol: TCP
+      port: 636
+      targetPort: 1636
+      nodePort: 30636

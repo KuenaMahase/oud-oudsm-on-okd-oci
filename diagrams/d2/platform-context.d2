@@ -1,0 +1,28 @@
+direction: right
+
+clients: {
+  label: "Administrators and LDAP clients"
+}
+oci: {
+  label: "Oracle Cloud Infrastructure"
+  lb: "API / Apps / LDAP entry points"
+  okd: {
+    label: "OKD / OpenShift"
+    proxy: "OUD Proxy (2 pods)"
+    oud: "OUD DS replicas (3)"
+    oudsm: "OUDSM"
+  }
+  storage: {
+    label: "Storage"
+    block: "OCI Block Volume"
+    nfs: "Oracle Linux NFS VM"
+    csi: "NFS CSI / nfs-rwx"
+  }
+}
+clients -> oci.lb
+oci.lb -> oci.okd.proxy
+oci.lb -> oci.okd.oudsm
+oci.okd.proxy -> oci.okd.oud
+oci.storage.block -> oci.storage.nfs -> oci.storage.csi
+oci.storage.csi -> oci.okd.oud
+oci.storage.csi -> oci.okd.oudsm
