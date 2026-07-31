@@ -7,3 +7,4 @@ ignores:
   - ".venv/**"
   - "node_modules/**"
   - "diagrams/rendered/**"
+  - "artifacts/source-notes/**"

@@ -2,6 +2,7 @@
 set -euo pipefail
 # lib.sh is stored beside each validation script.
 # shellcheck disable=SC1091
+# shellcheck source=lib.sh
 source "$(dirname "$0")/lib.sh"
 
 sc=${STORAGE_CLASS:-nfs-rwx}
