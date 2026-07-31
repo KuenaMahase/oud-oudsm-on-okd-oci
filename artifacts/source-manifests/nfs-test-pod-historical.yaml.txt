@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nfs-test-pod
+  namespace: openshift-csi-driver-nfs-namespace
+spec:
+  restartPolicy: Never
+  containers:
+  - name: test
+    image: registry.access.redhat.com/ubi9/ubi-minimal
+    command: ["/bin/sh","-c"]
+    args: ["echo hello-from-nfs > /data/hello && sleep 3600"]
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: nfs-test-pvc

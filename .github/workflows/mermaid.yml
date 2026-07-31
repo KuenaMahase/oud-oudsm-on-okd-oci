@@ -2,6 +2,8 @@
 name: Mermaid validation
 "on":
   pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -15,7 +17,7 @@ jobs:
       - name: Regenerate GitHub Mermaid gallery
         run: |
           python3 scripts/rendering/build-mermaid-gallery.py
-          git diff --exit-code diagrams/GALLERY.md
+          git diff --exit-code diagrams/GALLERY.md README.md
       - name: Render Mermaid SVG artifacts
         run: bash scripts/rendering/render-mermaid.sh
       - uses: actions/upload-artifact@v4
