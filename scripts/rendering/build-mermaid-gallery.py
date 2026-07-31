@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
-"""Generate a GitHub-renderable Mermaid gallery from authoritative .mmd files."""
+"""Generate a GitHub-renderable Mermaid gallery from authoritative .mmd files.
+
+Also refreshes the diagram blocks embedded in README.md so the landing page
+cannot drift from the .mmd sources. CI runs this and then fails on
+`git diff --exit-code`, which makes both outputs enforced rather than
+hand-maintained.
+"""
+import re
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[2]
 src_dir = root / "diagrams" / "mermaid"
 out = root / "diagrams" / "GALLERY.md"
+readme = root / "README.md"
 
 titles = {
     "01-final-platform-context": "1. Final platform context",
@@ -34,3 +42,29 @@ for source in sorted(src_dir.glob("*.mmd")):
 
 out.write_text("\n".join(parts), encoding="utf-8")
 print(out)
+
+# README.md embeds a subset of the same diagrams between marker comments:
+#   <!-- BEGIN GENERATED: 01-final-platform-context -->
+#   <!-- END GENERATED: 01-final-platform-context -->
+# Every marked block is rewritten from its .mmd source.
+block_re = re.compile(
+    r"(<!-- BEGIN GENERATED: (?P<stem>[\w-]+) -->\n).*?(?=<!-- END GENERATED: (?P=stem) -->)",
+    re.DOTALL,
+)
+
+
+def replace(match):
+    stem = match.group("stem")
+    source = src_dir / f"{stem}.mmd"
+    if not source.is_file():
+        raise SystemExit(f"README references unknown diagram source: {source}")
+    body = source.read_text(encoding="utf-8").rstrip()
+    return f"{match.group(1)}\n```mermaid\n{body}\n```\n\n"
+
+
+text = readme.read_text(encoding="utf-8")
+rendered, count = block_re.subn(replace, text)
+if not count:
+    raise SystemExit("README.md contains no BEGIN GENERATED diagram markers")
+readme.write_text(rendered, encoding="utf-8")
+print(f"{readme} ({count} diagram blocks)")
